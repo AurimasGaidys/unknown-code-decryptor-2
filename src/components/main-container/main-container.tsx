@@ -20,9 +20,9 @@ export const MainContainer = () => {
       <div>
         Decoder
         Encoded sentences:
-        {encodedDataView(data, dataset)}
-        {encodedDataView(data2, dataset)}
-        {encodedDataView(data3, dataset)}
+        {encodedDataView(data, dataset, setDataset)}
+        {encodedDataView(data2, dataset, setDataset)}
+        {encodedDataView(data3, dataset, setDataset)}
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>{dataset.map((x, i) => <div style={{fontSize: 16, padding: 3}}>{i}({result[i]}) <UseInput type="text" data={dataset} edit={setDataset} index={i} value={x} /><input></input></div>)}</div>
       {/* <p>{JSON.stringify(totalsArray)}</p> */}

@@ -7,10 +7,7 @@ export const mostCommonWords = (wordLength: number) => {
 
 export const mostCommonWordsFilteredByLetters = (wordLength: number, letters: string[]) => {
     var allWords = mostCommonWords(wordLength);
-    console.log("aaa", allWords);
     var filteredWords = allWords.map(x =>  wordFitsPatter(x, letters)).filter(x => x != "");
-    console.log("bbb", filteredWords);
-
     return filteredWords;
 }
 
@@ -23,15 +20,11 @@ export const wordFitsPatter = (word: string, letters: string[]) => {
         {
             var int = parseInt(letters[i]);
 
-            if(isNaN(int) && letters[i] != "" && letters[i] != " " && chars[i] != letters[i])
+            if(isNaN(int) && letters[i] != "" && letters[i] != " " && chars[i].toLowerCase() != letters[i].toLowerCase())
             {
-                // console.log(chars[i], letters[i]);
                 return ""
-            } else {
-                // console.log("same", chars[i], letters[i]);
             }
         }
     }
-    // console.log("finish", chars, letters)
     return word;
 }
